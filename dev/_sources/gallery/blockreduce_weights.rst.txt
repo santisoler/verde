@@ -19,7 +19,6 @@ produced blocked weights as well, use :class:`verde.BlockMean`.
 
 
 
-
 .. image:: /gallery/images/sphx_glr_blockreduce_weights_001.png
     :class: sphx-glr-single-img
 
@@ -39,7 +38,7 @@ produced blocked weights as well, use :class:`verde.BlockMean`.
 |
 
 
-.. code-block:: python
+.. code-block:: default
 
     import matplotlib.pyplot as plt
     import cartopy.crs as ccrs
@@ -102,7 +101,10 @@ produced blocked weights as well, use :class:`verde.BlockMean`.
     plt.tight_layout()
     plt.show()
 
-**Total running time of the script:** ( 0 minutes  0.233 seconds)
+
+.. rst-class:: sphx-glr-timing
+
+   **Total running time of the script:** ( 0 minutes  0.986 seconds)
 
 
 .. _sphx_glr_download_gallery_blockreduce_weights.py:

@@ -22,13 +22,21 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
@@ -36,13 +44,19 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="verde.datasets.fetch_baja_bathymetry" href="verde.datasets.fetch_baja_bathymetry.html" />
-    <link rel="prev" title="verde.grid_to_table" href="verde.grid_to_table.html" />
-    
-    <script src="../../_static/require.js"></script>
+    <link rel="prev" title="verde.median_distance" href="verde.median_distance.html" />
+    <!-- Google Analytics tracking code -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+            Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
+      ga('create', 'UA-38125837-1', 'auto', {'storage': 'none'});
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
 
 </head>
 
@@ -50,11 +64,10 @@
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -138,7 +151,7 @@
 <li class="toctree-l3"><a class="reference internal" href="verde.datasets.setup_rio_magnetic_map.html">verde.datasets.setup_rio_magnetic_map</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#base-classes-and-functions">Base Classes and Functions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../changes.html">Changelog</a></li>
@@ -238,26 +251,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast + .nbinput {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-</style>
-<div class="section" id="verde-datasets-checkerboard">
+  <div class="section" id="verde-datasets-checkerboard">
 <h1>verde.datasets.CheckerBoard<a class="headerlink" href="#verde-datasets-checkerboard" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="verde.datasets.CheckerBoard">
@@ -271,31 +265,23 @@
 <p>in which <span class="math notranslate nohighlight">\(e\)</span> is the easting coordinate, <span class="math notranslate nohighlight">\(n\)</span> is the northing
 coordinate, <span class="math notranslate nohighlight">\(a\)</span> is the amplitude, and <span class="math notranslate nohighlight">\(w_e\)</span> and <span class="math notranslate nohighlight">\(w_n\)</span> are
 the wavelengths in the east and north directions, respectively.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>amplitude</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The amplitude of the checkerboard undulations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>amplitude</strong><span class="classifier">float</span></dt><dd><p>The amplitude of the checkerboard undulations.</p>
 </dd>
-<dt><strong>region</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
-<dd><p class="first last">The boundaries (<code class="docutils literal notranslate"><span class="pre">[W,</span> <span class="pre">E,</span> <span class="pre">S,</span> <span class="pre">N]</span></code>) of the region used to generate the
+<dt><strong>region</strong><span class="classifier">tuple</span></dt><dd><p>The boundaries (<code class="docutils literal notranslate"><span class="pre">[W,</span> <span class="pre">E,</span> <span class="pre">S,</span> <span class="pre">N]</span></code>) of the region used to generate the
 synthetic data.</p>
 </dd>
-<dt><strong>w_east</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The wavelength in the east direction. Defaults to half of the West-East
+<dt><strong>w_east</strong><span class="classifier">float</span></dt><dd><p>The wavelength in the east direction. Defaults to half of the West-East
 size of the evaluating region.</p>
 </dd>
-<dt><strong>w_north</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The wavelength in the north direction. Defaults to half of the
+<dt><strong>w_north</strong><span class="classifier">float</span></dt><dd><p>The wavelength in the north direction. Defaults to half of the
 South-North size of the evaluating region.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">synth</span> <span class="o">=</span> <span class="n">CheckerBoard</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Default values for the wavelengths are selected automatically</span>
@@ -314,58 +300,51 @@ South-North size of the evaluating region.</p>
 <span class="go">[&#39;distance&#39;, &#39;easting&#39;, &#39;northing&#39;, &#39;scalars&#39;]</span>
 </pre></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">region_</span></code></dt>
-<dd><p class="first last">Used to fool the BaseGridder methods</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">region_</span></code></dt><dd><p>Used to fool the BaseGridder methods</p>
 </dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">w_east_</span></code></dt>
-<dd><p class="first last">Use half of the E-W extent</p>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">w_east_</span></code></dt><dd><p>Use half of the E-W extent</p>
 </dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">w_north_</span></code></dt>
-<dd><p class="first last">Use half of the N-S extent</p>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">w_north_</span></code></dt><dd><p>Use half of the N-S extent</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-center">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#verde.datasets.CheckerBoard.filter" title="verde.datasets.CheckerBoard.filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter</span></code></a>(coordinates,&nbsp;data[,&nbsp;weights])</td>
-<td>Filter the data through the gridder and produce residuals.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#verde.datasets.CheckerBoard.filter" title="verde.datasets.CheckerBoard.filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter</span></code></a>(coordinates, data[, weights])</p></td>
+<td><p>Filter the data through the gridder and produce residuals.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#verde.datasets.CheckerBoard.fit" title="verde.datasets.CheckerBoard.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(coordinates,&nbsp;data[,&nbsp;weights])</td>
-<td>Fit the gridder to observed data.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#verde.datasets.CheckerBoard.fit" title="verde.datasets.CheckerBoard.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(coordinates, data[, weights])</p></td>
+<td><p>Fit the gridder to observed data.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#verde.datasets.CheckerBoard.get_params" title="verde.datasets.CheckerBoard.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>([deep])</td>
-<td>Get parameters for this estimator.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#verde.datasets.CheckerBoard.get_params" title="verde.datasets.CheckerBoard.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>([deep])</p></td>
+<td><p>Get parameters for this estimator.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#verde.datasets.CheckerBoard.grid" title="verde.datasets.CheckerBoard.grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid</span></code></a>([region,&nbsp;shape,&nbsp;spacing,&nbsp;dims,&nbsp;…])</td>
-<td>Interpolate the data onto a regular grid.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#verde.datasets.CheckerBoard.grid" title="verde.datasets.CheckerBoard.grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid</span></code></a>([region, shape, spacing, dims, …])</p></td>
+<td><p>Interpolate the data onto a regular grid.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#verde.datasets.CheckerBoard.predict" title="verde.datasets.CheckerBoard.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(coordinates)</td>
-<td>Evaluate the checkerboard function on a given set of points.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#verde.datasets.CheckerBoard.predict" title="verde.datasets.CheckerBoard.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(coordinates)</p></td>
+<td><p>Evaluate the checkerboard function on a given set of points.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#verde.datasets.CheckerBoard.profile" title="verde.datasets.CheckerBoard.profile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">profile</span></code></a>(point1,&nbsp;point2,&nbsp;size[,&nbsp;dims,&nbsp;…])</td>
-<td>Interpolate data along a profile between two points.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#verde.datasets.CheckerBoard.profile" title="verde.datasets.CheckerBoard.profile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">profile</span></code></a>(point1, point2, size[, dims, …])</p></td>
+<td><p>Interpolate data along a profile between two points.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#verde.datasets.CheckerBoard.scatter" title="verde.datasets.CheckerBoard.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter</span></code></a>([region,&nbsp;size,&nbsp;random_state,&nbsp;dims,&nbsp;…])</td>
-<td>Interpolate values onto a random scatter of points.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#verde.datasets.CheckerBoard.scatter" title="verde.datasets.CheckerBoard.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter</span></code></a>([region, size, random_state, dims, …])</p></td>
+<td><p>Interpolate values onto a random scatter of points.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#verde.datasets.CheckerBoard.score" title="verde.datasets.CheckerBoard.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(coordinates,&nbsp;data[,&nbsp;weights])</td>
-<td>Score the gridder predictions against the given data.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#verde.datasets.CheckerBoard.score" title="verde.datasets.CheckerBoard.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(coordinates, data[, weights])</p></td>
+<td><p>Score the gridder predictions against the given data.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#verde.datasets.CheckerBoard.set_params" title="verde.datasets.CheckerBoard.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(**params)</td>
-<td>Set the parameters of this estimator.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#verde.datasets.CheckerBoard.set_params" title="verde.datasets.CheckerBoard.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(**params)</p></td>
+<td><p>Set the parameters of this estimator.</p></td>
 </tr>
 </tbody>
 </table>
@@ -373,13 +352,13 @@ South-North size of the evaluating region.</p>
 
 <div class="section" id="examples-using-verde-datasets-checkerboard">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">verde.datasets.CheckerBoard</span></code><a class="headerlink" href="#examples-using-verde-datasets-checkerboard" title="Permalink to this headline">¶</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="Verde provides classes and functions for processing spatial data, like bathymetry, GPS, tempera..."><div class="figure" id="id1">
+<div class="sphx-glr-thumbcontainer" tooltip="Verde provides classes and functions for processing spatial data, like bathymetry, GPS, tempera..."><div class="figure align-center" id="id1">
 <img alt="../../_images/sphx_glr_overview_thumb.png" src="../../_images/sphx_glr_overview_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../tutorials/overview.html#sphx-glr-tutorials-overview-py"><span class="std std-ref">Overview</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../../tutorials/overview.html#sphx-glr-tutorials-overview-py"><span class="std std-ref">Overview</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The :class:`verde.datasets.CheckerBoard` class generates synthetic data in a checkerboard patte..."><div class="figure" id="id2">
+</div><div class="sphx-glr-thumbcontainer" tooltip="The :class:`verde.datasets.CheckerBoard` class generates synthetic data in a checkerboard patte..."><div class="figure align-center" id="id2">
 <img alt="../../_images/sphx_glr_checkerboard_thumb.png" src="../../_images/sphx_glr_checkerboard_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../sample_data/checkerboard.html#sphx-glr-sample-data-checkerboard-py"><span class="std std-ref">Checkerboard function</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../../sample_data/checkerboard.html#sphx-glr-sample-data-checkerboard-py"><span class="std std-ref">Checkerboard function</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div><div style='clear:both'></div><dl class="method">
 <dt id="verde.datasets.CheckerBoard.filter">
@@ -391,38 +370,30 @@ data), and returns the coordinates, residuals, and weights.</p>
 with other processing operations and is used by <a class="reference internal" href="verde.Chain.html#verde.Chain" title="verde.Chain"><code class="xref py py-class docutils literal notranslate"><span class="pre">verde.Chain</span></code></a> to
 join them together (for example, so you can fit a spline on the
 residuals of a trend).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>coordinates</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of arrays</span></dt>
-<dd><p class="first last">Arrays with the coordinates of each data point. Should be in the
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>coordinates</strong><span class="classifier">tuple of arrays</span></dt><dd><p>Arrays with the coordinates of each data point. Should be in the
 following order: (easting, northing, vertical, …).</p>
 </dd>
-<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array or tuple of arrays</span></dt>
-<dd><p class="first last">The data values of each data point. If the data has more than one
+<dt><strong>data</strong><span class="classifier">array or tuple of arrays</span></dt><dd><p>The data values of each data point. If the data has more than one
 component, <em>data</em> must be a tuple of arrays (one for each
 component).</p>
 </dd>
-<dt><strong>weights</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or array or tuple of arrays</span></dt>
-<dd><p class="first last">If not None, then the weights assigned to each data point. If more
+<dt><strong>weights</strong><span class="classifier">None or array or tuple of arrays</span></dt><dd><p>If not None, then the weights assigned to each data point. If more
 than one data component is provided, you must provide a weights
 array for each data component (if not None).</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>coordinates, residuals, weights</strong></dt>
-<dd><p class="first last">The coordinates and weights are same as the input. Residuals are
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>coordinates, residuals, weights</strong></dt><dd><p>The coordinates and weights are same as the input. Residuals are
 the input data minus the predicted data.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -430,64 +401,50 @@ the input data minus the predicted data.</p>
 <code class="descclassname">CheckerBoard.</code><code class="descname">fit</code><span class="sig-paren">(</span><em>coordinates</em>, <em>data</em>, <em>weights=None</em><span class="sig-paren">)</span><a class="headerlink" href="#verde.datasets.CheckerBoard.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the gridder to observed data. NOT IMPLEMENTED.</p>
 <p>This is a dummy placeholder for an actual method.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>coordinates</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of arrays</span></dt>
-<dd><p class="first last">Arrays with the coordinates of each data point. Should be in the
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>coordinates</strong><span class="classifier">tuple of arrays</span></dt><dd><p>Arrays with the coordinates of each data point. Should be in the
 following order: (easting, northing, vertical, …).</p>
 </dd>
-<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array or tuple of arrays</span></dt>
-<dd><p class="first last">The data values of each data point. If the data has more than one
+<dt><strong>data</strong><span class="classifier">array or tuple of arrays</span></dt><dd><p>The data values of each data point. If the data has more than one
 component, <em>data</em> must be a tuple of arrays (one for each
 component).</p>
 </dd>
-<dt><strong>weights</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or array or tuple of arrays</span></dt>
-<dd><p class="first last">If not None, then the weights assigned to each data point. If more
+<dt><strong>weights</strong><span class="classifier">None or array or tuple of arrays</span></dt><dd><p>If not None, then the weights assigned to each data point. If more
 than one data component is provided, you must provide a weights
 array for each data component (if not None).</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>self</strong></dt>
-<dd><p class="first last">This instance of the gridder. Useful to chain operations.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>self</strong></dt><dd><p>This instance of the gridder. Useful to chain operations.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="verde.datasets.CheckerBoard.get_params">
 <code class="descclassname">CheckerBoard.</code><code class="descname">get_params</code><span class="sig-paren">(</span><em>deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#verde.datasets.CheckerBoard.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>deep</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean, optional</span></dt>
-<dd><p class="first last">If True, will return the parameters for this estimator and
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>deep</strong><span class="classifier">boolean, optional</span></dt><dd><p>If True, will return the parameters for this estimator and
 contained subobjects that are estimators.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>params</strong> <span class="classifier-delimiter">:</span> <span class="classifier">mapping of string to any</span></dt>
-<dd><p class="first last">Parameter names mapped to their values.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>params</strong><span class="classifier">mapping of string to any</span></dt><dd><p>Parameter names mapped to their values.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -501,38 +458,30 @@ extra keyword arguments (<code class="docutils literal notranslate"><span class=
 <p>If the interpolator collected the input data region, then it will be used if
 <code class="docutils literal notranslate"><span class="pre">region=None</span></code>. Otherwise, you must specify the grid region.</p>
 <p>Use the <em>dims</em> and <em>data_names</em> arguments to set custom names for the dimensions
-and the data field(s) in the output <a class="reference external" href="http://xarray.pydata.org/en/stable/generated/xarray.Dataset.html#xarray.Dataset" title="(in xarray v0.10.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a>. Default names will
+and the data field(s) in the output <a class="reference external" href="http://xarray.pydata.org/en/stable/generated/xarray.Dataset.html#xarray.Dataset" title="(in xarray v0.12.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a>. Default names will
 be provided if none are given.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>region</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list = [W, E, S, N]</span></dt>
-<dd><p class="first last">The boundaries of a given region in Cartesian or geographic coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>region</strong><span class="classifier">list = [W, E, S, N]</span></dt><dd><p>The boundaries of a given region in Cartesian or geographic coordinates.</p>
 </dd>
-<dt><strong>shape</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple = (n_north, n_east) or None</span></dt>
-<dd><p class="first last">The number of points in the South-North and West-East directions,
+<dt><strong>shape</strong><span class="classifier">tuple = (n_north, n_east) or None</span></dt><dd><p>The number of points in the South-North and West-East directions,
 respectively.</p>
 </dd>
-<dt><strong>spacing</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple = (s_north, s_east) or None</span></dt>
-<dd><p class="first last">The grid spacing in the South-North and West-East directions, respectively.</p>
+<dt><strong>spacing</strong><span class="classifier">tuple = (s_north, s_east) or None</span></dt><dd><p>The grid spacing in the South-North and West-East directions, respectively.</p>
 </dd>
-<dt><strong>dims</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list or None</span></dt>
-<dd><p class="first last">The names of the northing and easting data dimensions, respectively, in the
+<dt><strong>dims</strong><span class="classifier">list or None</span></dt><dd><p>The names of the northing and easting data dimensions, respectively, in the
 output grid. Defaults to <code class="docutils literal notranslate"><span class="pre">['northing',</span> <span class="pre">'easting']</span></code>. <strong>NOTE: This is an
 exception to the “easting” then “northing” pattern but is required for
 compatibility with xarray.</strong></p>
 </dd>
-<dt><strong>data_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of None</span></dt>
-<dd><p class="first last">The name(s) of the data variables in the output grid. Defaults to
+<dt><strong>data_names</strong><span class="classifier">list of None</span></dt><dd><p>The name(s) of the data variables in the output grid. Defaults to
 <code class="docutils literal notranslate"><span class="pre">['scalars']</span></code> for scalar data,
 <code class="docutils literal notranslate"><span class="pre">['east_component',</span> <span class="pre">'north_component']</span></code> for 2D vector data, and
 <code class="docutils literal notranslate"><span class="pre">['east_component',</span> <span class="pre">'north_component',</span> <span class="pre">'vertical_component']</span></code> for
 3D vector data.</p>
 </dd>
-<dt><strong>projection</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable or None</span></dt>
-<dd><p class="first last">If not None, then should be a callable object
+<dt><strong>projection</strong><span class="classifier">callable or None</span></dt><dd><p>If not None, then should be a callable object
 <code class="docutils literal notranslate"><span class="pre">projection(easting,</span> <span class="pre">northing)</span> <span class="pre">-&gt;</span> <span class="pre">(proj_easting,</span> <span class="pre">proj_northing)</span></code>
 that takes in easting and northing coordinate arrays and returns
 projected northing and easting coordinate arrays. This function
@@ -541,23 +490,20 @@ passing them into <code class="docutils literal notranslate"><span class="pre">p
 generate a geographic grid from a Cartesian gridder.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>grid</strong> <span class="classifier-delimiter">:</span> <span class="classifier">xarray.Dataset</span></dt>
-<dd><p class="first last">The interpolated grid. Metadata about the interpolator is written to the
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>grid</strong><span class="classifier">xarray.Dataset</span></dt><dd><p>The interpolated grid. Metadata about the interpolator is written to the
 <code class="docutils literal notranslate"><span class="pre">attrs</span></code> attribute.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<dl class="last docutils">
-<dt><a class="reference internal" href="verde.grid_coordinates.html#verde.grid_coordinates" title="verde.grid_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.grid_coordinates</span></code></a></dt>
-<dd>Generate the coordinate values for the grid.</dd>
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="verde.grid_coordinates.html#verde.grid_coordinates" title="verde.grid_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verde.grid_coordinates</span></code></a></dt><dd><p>Generate the coordinate values for the grid.</p>
+</dd>
 </dl>
 </div>
 </dd></dl>
@@ -566,29 +512,23 @@ generate a geographic grid from a Cartesian gridder.</p>
 <dt id="verde.datasets.CheckerBoard.predict">
 <code class="descclassname">CheckerBoard.</code><code class="descname">predict</code><span class="sig-paren">(</span><em>coordinates</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/verde/datasets/synthetic.html#CheckerBoard.predict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#verde.datasets.CheckerBoard.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the checkerboard function on a given set of points.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>coordinates</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of arrays</span></dt>
-<dd><p class="first last">Arrays with the coordinates of each data point. Should be in the
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>coordinates</strong><span class="classifier">tuple of arrays</span></dt><dd><p>Arrays with the coordinates of each data point. Should be in the
 following order: (easting, northing, vertical, …). Only easting
 and northing will be used, all subsequent coordinates will be
 ignored.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array</span></dt>
-<dd><p class="first last">The evaluated checkerboard function.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">array</span></dt><dd><p>The evaluated checkerboard function.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -600,39 +540,31 @@ coordinates are generated by <a class="reference internal" href="verde.profile_c
 for this function can be passed as extra keyword arguments (<code class="docutils literal notranslate"><span class="pre">kwargs</span></code>) to this
 method.</p>
 <p>Use the <em>dims</em> and <em>data_names</em> arguments to set custom names for the dimensions
-and the data field(s) in the output <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.23.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>. Default names are
+and the data field(s) in the output <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.24.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>. Default names are
 provided.</p>
 <p>Includes the calculated Cartesian distance from <em>point1</em> for each data point in
 the profile.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>point1</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
-<dd><p class="first last">The easting and northing coordinates, respectively, of the first point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>point1</strong><span class="classifier">tuple</span></dt><dd><p>The easting and northing coordinates, respectively, of the first point.</p>
 </dd>
-<dt><strong>point2</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
-<dd><p class="first last">The easting and northing coordinates, respectively, of the second point.</p>
+<dt><strong>point2</strong><span class="classifier">tuple</span></dt><dd><p>The easting and northing coordinates, respectively, of the second point.</p>
 </dd>
-<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of points to generate.</p>
+<dt><strong>size</strong><span class="classifier">int</span></dt><dd><p>The number of points to generate.</p>
 </dd>
-<dt><strong>dims</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list or None</span></dt>
-<dd><p class="first last">The names of the northing and easting data dimensions, respectively, in the
+<dt><strong>dims</strong><span class="classifier">list or None</span></dt><dd><p>The names of the northing and easting data dimensions, respectively, in the
 output dataframe. Defaults to <code class="docutils literal notranslate"><span class="pre">['northing',</span> <span class="pre">'easting']</span></code>. <strong>NOTE: This
 is an exception to the “easting” then “northing” pattern but is required for
 compatibility with xarray.</strong></p>
 </dd>
-<dt><strong>data_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of None</span></dt>
-<dd><p class="first last">The name(s) of the data variables in the output dataframe. Defaults
+<dt><strong>data_names</strong><span class="classifier">list of None</span></dt><dd><p>The name(s) of the data variables in the output dataframe. Defaults
 to <code class="docutils literal notranslate"><span class="pre">['scalars']</span></code> for scalar data,
 <code class="docutils literal notranslate"><span class="pre">['east_component',</span> <span class="pre">'north_component']</span></code> for 2D vector data, and
 <code class="docutils literal notranslate"><span class="pre">['east_component',</span> <span class="pre">'north_component',</span> <span class="pre">'vertical_component']</span></code> for
 3D vector data.</p>
 </dd>
-<dt><strong>projection</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable or None</span></dt>
-<dd><p class="first last">If not None, then should be a callable object
+<dt><strong>projection</strong><span class="classifier">callable or None</span></dt><dd><p>If not None, then should be a callable object
 <code class="docutils literal notranslate"><span class="pre">projection(easting,</span> <span class="pre">northing)</span> <span class="pre">-&gt;</span> <span class="pre">(proj_easting,</span> <span class="pre">proj_northing)</span></code>
 that takes in easting and northing coordinate arrays and returns
 projected northing and easting coordinate arrays. This function
@@ -641,17 +573,14 @@ passing them into <code class="docutils literal notranslate"><span class="pre">p
 generate a geographic profile from a Cartesian gridder.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>table</strong> <span class="classifier-delimiter">:</span> <span class="classifier">pandas.DataFrame</span></dt>
-<dd><p class="first last">The interpolated values along the profile.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>table</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>The interpolated values along the profile.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -664,41 +593,33 @@ method.</p>
 <p>If the interpolator collected the input data region, then it will be used if
 <code class="docutils literal notranslate"><span class="pre">region=None</span></code>. Otherwise, you must specify the grid region.</p>
 <p>Use the <em>dims</em> and <em>data_names</em> arguments to set custom names for the dimensions
-and the data field(s) in the output <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.23.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>. Default names are
+and the data field(s) in the output <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.24.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>. Default names are
 provided.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>region</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list = [W, E, S, N]</span></dt>
-<dd><p class="first last">The boundaries of a given region in Cartesian or geographic
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>region</strong><span class="classifier">list = [W, E, S, N]</span></dt><dd><p>The boundaries of a given region in Cartesian or geographic
 coordinates.</p>
 </dd>
-<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of points to generate.</p>
+<dt><strong>size</strong><span class="classifier">int</span></dt><dd><p>The number of points to generate.</p>
 </dd>
-<dt><strong>random_state</strong> <span class="classifier-delimiter">:</span> <span class="classifier">numpy.random.RandomState or an int seed</span></dt>
-<dd><p class="first last">A random number generator used to define the state of the random
+<dt><strong>random_state</strong><span class="classifier">numpy.random.RandomState or an int seed</span></dt><dd><p>A random number generator used to define the state of the random
 permutations. Use a fixed seed to make sure computations are
 reproducible. Use <code class="docutils literal notranslate"><span class="pre">None</span></code> to choose a seed automatically
 (resulting in different numbers with each run).</p>
 </dd>
-<dt><strong>dims</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list or None</span></dt>
-<dd><p class="first last">The names of the northing and easting data dimensions, respectively, in the
+<dt><strong>dims</strong><span class="classifier">list or None</span></dt><dd><p>The names of the northing and easting data dimensions, respectively, in the
 output dataframe. Defaults to <code class="docutils literal notranslate"><span class="pre">['northing',</span> <span class="pre">'easting']</span></code>. <strong>NOTE: This
 is an exception to the “easting” then “northing” pattern but is required for
 compatibility with xarray.</strong></p>
 </dd>
-<dt><strong>data_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of None</span></dt>
-<dd><p class="first last">The name(s) of the data variables in the output dataframe. Defaults
+<dt><strong>data_names</strong><span class="classifier">list of None</span></dt><dd><p>The name(s) of the data variables in the output dataframe. Defaults
 to <code class="docutils literal notranslate"><span class="pre">['scalars']</span></code> for scalar data,
 <code class="docutils literal notranslate"><span class="pre">['east_component',</span> <span class="pre">'north_component']</span></code> for 2D vector data, and
 <code class="docutils literal notranslate"><span class="pre">['east_component',</span> <span class="pre">'north_component',</span> <span class="pre">'vertical_component']</span></code> for
 3D vector data.</p>
 </dd>
-<dt><strong>projection</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable or None</span></dt>
-<dd><p class="first last">If not None, then should be a callable object
+<dt><strong>projection</strong><span class="classifier">callable or None</span></dt><dd><p>If not None, then should be a callable object
 <code class="docutils literal notranslate"><span class="pre">projection(easting,</span> <span class="pre">northing)</span> <span class="pre">-&gt;</span> <span class="pre">(proj_easting,</span> <span class="pre">proj_northing)</span></code>
 that takes in easting and northing coordinate arrays and returns
 projected northing and easting coordinate arrays. This function
@@ -707,17 +628,14 @@ passing them into <code class="docutils literal notranslate"><span class="pre">p
 generate a geographic scatter from a Cartesian gridder.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>table</strong> <span class="classifier-delimiter">:</span> <span class="classifier">pandas.DataFrame</span></dt>
-<dd><p class="first last">The interpolated values on a random set of points.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>table</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>The interpolated values on a random set of points.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -729,37 +647,29 @@ predicted values and the given data values. A maximum score of 1 means
 a perfect fit. The score can be negative.</p>
 <p>If the data has more than 1 component, the scores of each component
 will be averaged.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>coordinates</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple of arrays</span></dt>
-<dd><p class="first last">Arrays with the coordinates of each data point. Should be in the
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>coordinates</strong><span class="classifier">tuple of arrays</span></dt><dd><p>Arrays with the coordinates of each data point. Should be in the
 following order: (easting, northing, vertical, …).</p>
 </dd>
-<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array or tuple of arrays</span></dt>
-<dd><p class="first last">The data values of each data point. If the data has more than one
+<dt><strong>data</strong><span class="classifier">array or tuple of arrays</span></dt><dd><p>The data values of each data point. If the data has more than one
 component, <em>data</em> must be a tuple of arrays (one for each
 component).</p>
 </dd>
-<dt><strong>weights</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or array or tuple of arrays</span></dt>
-<dd><p class="first last">If not None, then the weights assigned to each data point. If more
+<dt><strong>weights</strong><span class="classifier">None or array or tuple of arrays</span></dt><dd><p>If not None, then the weights assigned to each data point. If more
 than one data component is provided, you must provide a weights
 array for each data component (if not None).</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>score</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The R^2 score</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>score</strong><span class="classifier">float</span></dt><dd><p>The R^2 score</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -770,18 +680,13 @@ array for each data component (if not None).</p>
 (such as pipelines). The latter have parameters of the form
 <code class="docutils literal notranslate"><span class="pre">&lt;component&gt;__&lt;parameter&gt;</span></code> so that it’s possible to update each
 component of a nested object.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>self</strong></dt>
-<dd></dd>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>self</strong></dt><dd></dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <div style='clear:both'></div></div>
@@ -798,7 +703,7 @@ component of a nested object.</p>
         <a href="verde.datasets.fetch_baja_bathymetry.html" class="btn btn-neutral float-right" title="verde.datasets.fetch_baja_bathymetry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="verde.grid_to_table.html" class="btn btn-neutral" title="verde.grid_to_table" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="verde.median_distance.html" class="btn btn-neutral float-left" title="verde.median_distance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -807,8 +712,10 @@ component of a nested object.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018-2018, Leonardo Uieda
-      Last updated on Nov 06, 2018.
+        &copy; Copyright 2017-2019, The Verde Developers
+      <span class="lastupdated">
+        Last updated on Apr 10, 2019.
+      </span>
 
     </p>
   </div>
@@ -825,26 +732,16 @@ component of a nested object.</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

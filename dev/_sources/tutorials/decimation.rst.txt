@@ -14,8 +14,7 @@ Often times, raw spatial data can be highly oversampled in a direction. In these
 we need to decimate the data before interpolation to avoid aliasing effects.
 
 
-
-.. code-block:: python
+.. code-block:: default
 
     import matplotlib.pyplot as plt
     import cartopy.crs as ccrs
@@ -31,8 +30,7 @@ For example, our sample shipborne bathymetry data has a higher sampling frequenc
 along the tracks than between tracks:
 
 
-
-.. code-block:: python
+.. code-block:: default
 
 
     # Load the data as a pandas.DataFrame
@@ -66,8 +64,7 @@ function that receives a numpy array as input and returns a single scalar value.
 :func:`numpy.mean` or :func:`numpy.median` functions are usually what we want.
 
 
-
-.. code-block:: python
+.. code-block:: default
 
     import numpy as np
 
@@ -84,8 +81,7 @@ vary abruptly and a mean would smooth the data too much. For data varies more
 smoothly (like gravity and magnetic data), a mean would be a better option.
 
 
-
-.. code-block:: python
+.. code-block:: default
 
     reducer = vd.BlockReduce(reduction=np.median, spacing=5 / 60)
     print(reducer)
@@ -101,15 +97,14 @@ smoothly (like gravity and magnetic data), a mean would be a better option.
  .. code-block:: none
 
     BlockReduce(adjust='spacing', center_coordinates=False,
-          reduction=<function median at 0x146020f488c8>, region=None,
+          reduction=<function median at 0x2afc3249dbf8>, region=None,
           spacing=0.08333333333333333)
 
 
 Use the :meth:`~verde.BlockReduce.filter` method to apply the reduction:
 
 
-
-.. code-block:: python
+.. code-block:: default
 
     coordinates, bathymetry = reducer.filter(
         coordinates=(data.longitude, data.latitude), data=data.bathymetry_m
@@ -140,8 +135,7 @@ tell :class:`~verde.BlockReduce` to return the coordinates of the center of each
 block:
 
 
-
-.. code-block:: python
+.. code-block:: default
 
     reducer_center = vd.BlockReduce(
         reduction=np.median, spacing=5 / 60, center_coordinates=True
@@ -171,7 +165,9 @@ block:
 Now the data are ready for interpolation.
 
 
-**Total running time of the script:** ( 0 minutes  2.612 seconds)
+.. rst-class:: sphx-glr-timing
+
+   **Total running time of the script:** ( 0 minutes  1.558 seconds)
 
 
 .. _sphx_glr_download_tutorials_decimation.py:

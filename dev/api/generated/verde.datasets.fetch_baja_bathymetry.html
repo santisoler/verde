@@ -22,13 +22,21 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
@@ -37,12 +45,18 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="verde.datasets.setup_baja_bathymetry_map" href="verde.datasets.setup_baja_bathymetry_map.html" />
     <link rel="prev" title="verde.datasets.CheckerBoard" href="verde.datasets.CheckerBoard.html" />
-    
-    <script src="../../_static/require.js"></script>
+    <!-- Google Analytics tracking code -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+            Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
+      ga('create', 'UA-38125837-1', 'auto', {'storage': 'none'});
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
 
 </head>
 
@@ -50,11 +64,10 @@
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -138,7 +151,7 @@
 <li class="toctree-l3"><a class="reference internal" href="verde.datasets.setup_rio_magnetic_map.html">verde.datasets.setup_rio_magnetic_map</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#base-classes-and-functions">Base Classes and Functions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../changes.html">Changelog</a></li>
@@ -238,26 +251,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast + .nbinput {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-</style>
-<div class="section" id="verde-datasets-fetch-baja-bathymetry">
+  <div class="section" id="verde-datasets-fetch-baja-bathymetry">
 <h1>verde.datasets.fetch_baja_bathymetry<a class="headerlink" href="#verde-datasets-fetch-baja-bathymetry" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="verde.datasets.fetch_baja_bathymetry">
@@ -266,58 +260,53 @@
 <p>This is the <code class="docutils literal notranslate"><span class="pre">&#64;tut_ship.xyz</span></code> sample data from the <a class="reference external" href="http://gmt.soest.hawaii.edu/">GMT</a> tutorial.</p>
 <p>If the file isn’t already in your data directory, it will be downloaded
 automatically.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.23.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a></span></dt>
-<dd><p class="first last">The bathymetry data. Columns are longitude, latitude, and bathymetry
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl>
+<dt><strong>data</strong><span class="classifier"><a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.24.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a></span></dt><dd><p>The bathymetry data. Columns are longitude, latitude, and bathymetry
 (in meters) for each data point.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<dl class="last docutils">
-<dt><a class="reference internal" href="verde.datasets.setup_baja_bathymetry_map.html#verde.datasets.setup_baja_bathymetry_map" title="verde.datasets.setup_baja_bathymetry_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_baja_bathymetry_map</span></code></a></dt>
-<dd>Utility function to help setup a Cartopy map.</dd>
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="verde.datasets.setup_baja_bathymetry_map.html#verde.datasets.setup_baja_bathymetry_map" title="verde.datasets.setup_baja_bathymetry_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_baja_bathymetry_map</span></code></a></dt><dd><p>Utility function to help setup a Cartopy map.</p>
+</dd>
 </dl>
 </div>
 </dd></dl>
 
 <div class="section" id="examples-using-verde-datasets-fetch-baja-bathymetry">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">verde.datasets.fetch_baja_bathymetry</span></code><a class="headerlink" href="#examples-using-verde-datasets-fetch-baja-bathymetry" title="Permalink to this headline">¶</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="When gridding data that has been highly oversampled in a direction (shipborne and airborne data..."><div class="figure" id="id1">
+<div class="sphx-glr-thumbcontainer" tooltip="When gridding data that has been highly oversampled in a direction (shipborne and airborne data..."><div class="figure align-center" id="id1">
 <img alt="../../_images/sphx_glr_blockreduce_thumb.png" src="../../_images/sphx_glr_blockreduce_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../gallery/blockreduce.html#sphx-glr-gallery-blockreduce-py"><span class="std std-ref">Blocked reduction operations</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../../gallery/blockreduce.html#sphx-glr-gallery-blockreduce-py"><span class="std std-ref">Blocked reduction operations</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Sometimes, data points are unevenly distributed. In such cases, we might not want to have inter..."><div class="figure" id="id2">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Sometimes, data points are unevenly distributed. In such cases, we might not want to have inter..."><div class="figure align-center" id="id2">
 <img alt="../../_images/sphx_glr_distance_mask_thumb.png" src="../../_images/sphx_glr_distance_mask_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../gallery/distance_mask.html#sphx-glr-gallery-distance-mask-py"><span class="std std-ref">Mask grid points by distance</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../../gallery/distance_mask.html#sphx-glr-gallery-distance-mask-py"><span class="std std-ref">Mask grid points by distance</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Scipy offers a range of interpolation methods in :mod:`scipy.interpolate` and 3 specifically fo..."><div class="figure" id="id3">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Scipy offers a range of interpolation methods in :mod:`scipy.interpolate` and 3 specifically fo..."><div class="figure align-center" id="id3">
 <img alt="../../_images/sphx_glr_scipygridder_thumb.png" src="../../_images/sphx_glr_scipygridder_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../gallery/scipygridder.html#sphx-glr-gallery-scipygridder-py"><span class="std std-ref">Gridding with Scipy</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../../gallery/scipygridder.html#sphx-glr-gallery-scipygridder-py"><span class="std std-ref">Gridding with Scipy</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Often, a data processing pipeline looks like the following:"><div class="figure" id="id4">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Often, a data processing pipeline looks like the following:"><div class="figure align-center" id="id4">
 <img alt="../../_images/sphx_glr_chain_thumb.png" src="../../_images/sphx_glr_chain_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../tutorials/chain.html#sphx-glr-tutorials-chain-py"><span class="std std-ref">Chaining Operations</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../../tutorials/chain.html#sphx-glr-tutorials-chain-py"><span class="std std-ref">Chaining Operations</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Often times, raw spatial data can be highly oversampled in a direction. In these cases, we need..."><div class="figure" id="id5">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Often times, raw spatial data can be highly oversampled in a direction. In these cases, we need..."><div class="figure align-center" id="id5">
 <img alt="../../_images/sphx_glr_decimation_thumb.png" src="../../_images/sphx_glr_decimation_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../tutorials/decimation.html#sphx-glr-tutorials-decimation-py"><span class="std std-ref">Data Decimation</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../../tutorials/decimation.html#sphx-glr-tutorials-decimation-py"><span class="std std-ref">Data Decimation</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Most gridders and processing methods in Verde operate under the assumption that the data coordi..."><div class="figure" id="id6">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Most gridders and processing methods in Verde operate under the assumption that the data coordi..."><div class="figure align-center" id="id6">
 <img alt="../../_images/sphx_glr_projections_thumb.png" src="../../_images/sphx_glr_projections_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../tutorials/projections.html#sphx-glr-tutorials-projections-py"><span class="std std-ref">Geographic Coordinates</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../../tutorials/projections.html#sphx-glr-tutorials-projections-py"><span class="std std-ref">Geographic Coordinates</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="We provide sample bathymetry data from Baja California to test the gridding methods. This is th..."><div class="figure" id="id7">
+</div><div class="sphx-glr-thumbcontainer" tooltip="We provide sample bathymetry data from Baja California to test the gridding methods. This is th..."><div class="figure align-center" id="id7">
 <img alt="../../_images/sphx_glr_baja_bathymetry_thumb.png" src="../../_images/sphx_glr_baja_bathymetry_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../sample_data/baja_bathymetry.html#sphx-glr-sample-data-baja-bathymetry-py"><span class="std std-ref">Bathymetry data from Baja California</span></a></span></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../../sample_data/baja_bathymetry.html#sphx-glr-sample-data-baja-bathymetry-py"><span class="std std-ref">Bathymetry data from Baja California</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div><div style='clear:both'></div></div>
 </div>
@@ -333,7 +322,7 @@ automatically.</p>
         <a href="verde.datasets.setup_baja_bathymetry_map.html" class="btn btn-neutral float-right" title="verde.datasets.setup_baja_bathymetry_map" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="verde.datasets.CheckerBoard.html" class="btn btn-neutral" title="verde.datasets.CheckerBoard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="verde.datasets.CheckerBoard.html" class="btn btn-neutral float-left" title="verde.datasets.CheckerBoard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -342,8 +331,10 @@ automatically.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018-2018, Leonardo Uieda
-      Last updated on Nov 06, 2018.
+        &copy; Copyright 2017-2019, The Verde Developers
+      <span class="lastupdated">
+        Last updated on Apr 10, 2019.
+      </span>
 
     </p>
   </div>
@@ -360,26 +351,16 @@ automatically.</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

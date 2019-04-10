@@ -34,7 +34,6 @@ Before we get started, here are a few of the conventions we use across Verde:
   north.
 
 
-
 The library
 -----------
 
@@ -44,8 +43,7 @@ The only exceptions are the functions related to loading sample data, which are 
 :mod:`verde`.
 
 
-
-.. code-block:: python
+.. code-block:: default
 
 
     import verde as vd
@@ -78,8 +76,7 @@ As an example, let's generate some synthetic data using
 :class:`verde.datasets.CheckerBoard`:
 
 
-
-.. code-block:: python
+.. code-block:: default
 
 
     data = vd.datasets.CheckerBoard().scatter(size=500, random_state=0)
@@ -108,8 +105,7 @@ The data are random points taken from a checkerboard function and returned to us
 :class:`pandas.DataFrame`:
 
 
-
-.. code-block:: python
+.. code-block:: default
 
 
     import matplotlib.pyplot as plt
@@ -132,8 +128,7 @@ Now we can use the bi-harmonic spline method [Sandwell1987]_ to fit this data. F
 we create a new :class:`verde.Spline`:
 
 
-
-.. code-block:: python
+.. code-block:: default
 
 
     spline = vd.Spline()
@@ -157,8 +152,7 @@ Before we can use the spline, we need to fit it to our synthetic data. After tha
 can use the spline to predict values anywhere:
 
 
-
-.. code-block:: python
+.. code-block:: default
 
 
     spline.fit((data.easting, data.northing), data.scalars)
@@ -187,8 +181,7 @@ using the :meth:`~verde.Spline.score` method to calculate the `R² coefficient o
 determination <https://en.wikipedia.org/wiki/Coefficient_of_determination>`__.
 
 
-
-.. code-block:: python
+.. code-block:: default
 
 
     true_values = vd.datasets.CheckerBoard().predict(grid_coords)
@@ -204,7 +197,7 @@ determination <https://en.wikipedia.org/wiki/Coefficient_of_determination>`__.
 
  .. code-block:: none
 
-    0.9950450871662261
+    0.9950450871662423
 
 
 Generating grids and profiles
@@ -215,8 +208,7 @@ A more convenient way of generating grids is through the
 coordinates and output an :class:`xarray.Dataset`.
 
 
-
-.. code-block:: python
+.. code-block:: default
 
 
     grid = spline.grid(spacing=30)
@@ -248,8 +240,7 @@ and "northing") and data variables ("scalars"). You can overwrite these names by
 setting the ``dims`` and ``data_names`` arguments.
 
 
-
-.. code-block:: python
+.. code-block:: default
 
 
     grid = spline.grid(spacing=30, dims=["latitude", "longitude"], data_names=["gravity"])
@@ -288,8 +279,7 @@ using the :meth:`~verde.base.BaseGridder.profile` method. The profile data are
 returned as a :class:`pandas.DataFrame`.
 
 
-
-.. code-block:: python
+.. code-block:: default
 
 
     prof = spline.profile(point1=(0, 0), point2=(5000, -5000), size=200)
@@ -334,7 +324,9 @@ documentation will involve some variation of the following workflow:
    :meth:`~verde.base.BaseGridder.grid`)
 
 
-**Total running time of the script:** ( 0 minutes  2.994 seconds)
+.. rst-class:: sphx-glr-timing
+
+   **Total running time of the script:** ( 0 minutes  2.127 seconds)
 
 
 .. _sphx_glr_download_tutorials_overview.py:

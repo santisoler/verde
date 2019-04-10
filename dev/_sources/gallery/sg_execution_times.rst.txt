@@ -1,0 +1,20 @@
+
+:orphan:
+
+.. _sphx_glr_gallery_sg_execution_times:
+
+Computation times
+=================
+**00:13.672** total execution time for **gallery** files:
+
+- **00:03.658**: :ref:`sphx_glr_gallery_trend.py` (``trend.py``)
+- **00:01.992**: :ref:`sphx_glr_gallery_spline_weights.py` (``spline_weights.py``)
+- **00:01.623**: :ref:`sphx_glr_gallery_blockreduce_weights_mean.py` (``blockreduce_weights_mean.py``)
+- **00:01.108**: :ref:`sphx_glr_gallery_distance_mask.py` (``distance_mask.py``)
+- **00:01.036**: :ref:`sphx_glr_gallery_vectorspline2d.py` (``vectorspline2d.py``)
+- **00:00.986**: :ref:`sphx_glr_gallery_blockreduce_weights.py` (``blockreduce_weights.py``)
+- **00:00.883**: :ref:`sphx_glr_gallery_blockreduce.py` (``blockreduce.py``)
+- **00:00.742**: :ref:`sphx_glr_gallery_spline.py` (``spline.py``)
+- **00:00.656**: :ref:`sphx_glr_gallery_scipygridder.py` (``scipygridder.py``)
+- **00:00.630**: :ref:`sphx_glr_gallery_vector_trend.py` (``vector_trend.py``)
+- **00:00.358**: :ref:`sphx_glr_gallery_vector_uncoupled.py` (``vector_uncoupled.py``)
